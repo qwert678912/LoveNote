@@ -1,0 +1,105 @@
+:root {
+    --duration: 30s;  /* Reduced duration for faster effect */
+    --delay: 3s;      /* Reduced delay between images */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+    background-color: black; /* Set the background color to black */
+}
+
+.slideshow-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slideshow {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.slideshow img {
+    position: absolute;
+    width: auto;
+    height: 50vh;  /* Set height for images to control their size */
+    left: 50%;
+    transform: translateX(-50%) translateY(100%); /* Start off the bottom of the screen */
+    opacity: 0;
+    animation: slideUp var(--duration) linear infinite;
+}
+
+/* Image sequencing with delay for smooth transition */
+.slideshow img:nth-child(1) {
+    animation-delay: 0s;
+}
+.slideshow img:nth-child(2) {
+    animation-delay: calc(var(--delay) * 1);
+}
+.slideshow img:nth-child(3) {
+    animation-delay: calc(var(--delay) * 2);
+}
+.slideshow img:nth-child(4) {
+    animation-delay: calc(var(--delay) * 3);
+}
+.slideshow img:nth-child(5) {
+    animation-delay: calc(var(--delay) * 4);
+}
+.slideshow img:nth-child(6) {
+    animation-delay: calc(var(--delay) * 5);
+}
+.slideshow img:nth-child(7) {
+    animation-delay: calc(var(--delay) * 6);
+}
+.slideshow img:nth-child(8) {
+    animation-delay: calc(var(--delay) * 7);
+}
+.slideshow img:nth-child(9) {
+    animation-delay: calc(var(--delay) * 8);
+}
+.slideshow img:nth-child(10) {
+    animation-delay: calc(var(--delay) * 9);
+}
+.slideshow img:nth-child(11) {
+    animation-delay: calc(var(--delay) * 10);
+}
+.slideshow img:nth-child(12) {
+    animation-delay: calc(var(--delay) * 11);
+}
+.slideshow img:nth-child(13) {
+    animation-delay: calc(var(--delay) * 12);
+}
+.slideshow img:nth-child(14) {
+    animation-delay: calc(var(--delay) * 13);
+}
+
+/* Keyframe for continuous upward sliding */
+@keyframes slideUp {
+    0% {
+        transform: translateX(-50%) translateY(100%);  /* Start below the screen */
+        opacity: 0;
+    }
+    10% {
+        opacity: 1; /* Fade in */
+    }
+    80% {
+        transform: translateX(-50%) translateY(-50%);  /* Move up through the screen */
+        opacity: 1; /* Stay visible */
+    }
+    100% {
+        transform: translateX(-50%) translateY(-200%); /* Move out of the screen */
+        opacity: 0; /* Fade out */
+    }
+}
